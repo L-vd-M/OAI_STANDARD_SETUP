@@ -1,0 +1,6 @@
+[submodule "OAI_CN_code"]
+	path = OAI_CN_code
+	url = https://github.com/L-vd-M/OAI_cn5g.git
+[submodule "OAI_RAN_code/openairinterface5g"]
+	path = OAI_RAN_code/openairinterface5g
+	url = https://gitlab.eurecom.fr/oai/openairinterface5g.git

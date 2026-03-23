@@ -1,3 +1,2 @@
-# OAI repository directories — each has its own git repo
-OAI_CN_code/
-OAI_RAN_code/
+# openairinterface5g is tracked as a submodule
+# OAI_CN_code is tracked as a submodule
