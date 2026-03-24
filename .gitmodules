@@ -4,3 +4,6 @@
 [submodule "OAI_RAN_code"]
 	path = OAI_RAN_code
 	url = https://github.com/L-vd-M/OAI_RAN_code.git
+[submodule "OAI_HandsOn_Workshops/oai-workshops"]
+	path = OAI_HandsOn_Workshops/oai-workshops
+	url = https://gitlab.eurecom.fr/oai/trainings/oai-workshops.git
