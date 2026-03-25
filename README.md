@@ -8,6 +8,8 @@
 
 ## Overview
 
+**🔗 https://github.com/L-vd-M/OAI_STANDARD_SETUP**
+
 This workspace is the central development environment for working with OpenAirInterface (OAI) 5G source code. It consolidates the OAI 5G RAN, 5G Core Network, and hands-on training material into a single structured workspace, with GitHub Copilot AI agent support for code analysis, cloning, and documentation.
 
 ---
