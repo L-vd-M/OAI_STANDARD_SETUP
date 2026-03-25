@@ -48,24 +48,24 @@ Every component in this workspace maps directly to a 3GPP Technical Specificatio
 
 | Component | Primary 3GPP TS | What the spec defines |
 |---|---|---|
-| NR PHY | TS 38.211, 38.212, 38.213, 38.214 | Physical channels, coding, scheduling |
-| NR MAC | TS 38.321 | Medium access control |
-| NR RLC | TS 38.322 | Radio link control |
-| NR PDCP | TS 38.323 | Packet data convergence |
-| NR SDAP | TS 37.324 | QoS flow-to-bearer mapping |
-| NR RRC | TS 38.331 | Radio resource control |
-| NGAP (N2) | TS 38.413 | gNB–AMF interface |
-| F1AP | TS 38.473 | CU–DU split |
-| E1AP | TS 38.463 | CU-CP / CU-UP split |
-| E2AP | O-RAN WG3 | nearRT-RIC interface |
-| NAS | TS 24.501 | UE–AMF signalling |
-| 5GC SBA | TS 23.501, 23.502 | Service-based architecture |
-| AMF | TS 23.501 §6.2.1 | Access management |
-| SMF | TS 23.501 §6.2.2 | Session management |
-| UPF | TS 23.501 §6.2.3 | User plane forwarding |
-| NRF | TS 23.501 §6.2.6 | NF registry and discovery |
-| PFCP (N4) | TS 29.244 | SMF–UPF control-plane |
-| GTPv1-U (N3) | TS 29.281 | User-plane tunnelling |
+| NR PHY | [TS 38.211](https://www.3gpp.org/DynaReport/38211.htm), [38.212](https://www.3gpp.org/DynaReport/38212.htm), [38.213](https://www.3gpp.org/DynaReport/38213.htm), [38.214](https://www.3gpp.org/DynaReport/38214.htm) | Physical channels, coding, scheduling |
+| NR MAC | [TS 38.321](https://www.3gpp.org/DynaReport/38321.htm) | Medium access control |
+| NR RLC | [TS 38.322](https://www.3gpp.org/DynaReport/38322.htm) | Radio link control |
+| NR PDCP | [TS 38.323](https://www.3gpp.org/DynaReport/38323.htm) | Packet data convergence |
+| NR SDAP | [TS 37.324](https://www.3gpp.org/DynaReport/37324.htm) | QoS flow-to-bearer mapping |
+| NR RRC | [TS 38.331](https://www.3gpp.org/DynaReport/38331.htm) | Radio resource control |
+| NGAP (N2) | [TS 38.413](https://www.3gpp.org/DynaReport/38413.htm) | gNB–AMF interface |
+| F1AP | [TS 38.473](https://www.3gpp.org/DynaReport/38473.htm) | CU–DU split |
+| E1AP | [TS 38.463](https://www.3gpp.org/DynaReport/38463.htm) | CU-CP / CU-UP split |
+| E2AP | [O-RAN WG3](https://www.o-ran.org/specifications) | nearRT-RIC interface |
+| NAS | [TS 24.501](https://www.3gpp.org/DynaReport/24501.htm) | UE–AMF signalling |
+| 5GC SBA | [TS 23.501](https://www.3gpp.org/DynaReport/23501.htm), [23.502](https://www.3gpp.org/DynaReport/23502.htm) | Service-based architecture |
+| AMF | [TS 23.501](https://www.3gpp.org/DynaReport/23501.htm) §6.2.1 | Access management |
+| SMF | [TS 23.501](https://www.3gpp.org/DynaReport/23501.htm) §6.2.2 | Session management |
+| UPF | [TS 23.501](https://www.3gpp.org/DynaReport/23501.htm) §6.2.3 | User plane forwarding |
+| NRF | [TS 23.501](https://www.3gpp.org/DynaReport/23501.htm) §6.2.6 | NF registry and discovery |
+| PFCP (N4) | [TS 29.244](https://www.3gpp.org/DynaReport/29244.htm) | SMF–UPF control-plane |
+| GTPv1-U (N3) | [TS 29.281](https://www.3gpp.org/DynaReport/29281.htm) | User-plane tunnelling |
 
 When you encounter code that is difficult to understand, looking up the corresponding 3GPP TS section is often the fastest way to understand the intent.
 
@@ -1003,31 +1003,31 @@ This runs entirely in software on a single workstation. No SDR hardware is requi
 
 ### 3GPP Specifications Commonly Referenced
 
-When you read OAI source code and encounter an unfamiliar value or procedure, look it up in the corresponding 3GPP spec. ETSI publishes all specs free of charge at `portal.etsi.org`.
+When you read OAI source code and encounter an unfamiliar value or procedure, look it up in the corresponding 3GPP spec. 3GPP publishes all specs free of charge at [www.3gpp.org](https://www.3gpp.org/DynaReport/TSG-WG--index.htm); ETSI mirrors them at [portal.etsi.org](https://portal.etsi.org/).
 
 | What you are looking at | Specification |
 |---|---|
-| NR Physical layer (waveform, channels, procedures) | **TS 38.211**, **TS 38.212**, **TS 38.213**, **TS 38.214** |
-| MAC protocol | **TS 38.321** |
-| RLC protocol | **TS 38.322** |
-| PDCP protocol | **TS 38.323** |
-| SDAP (QoS-to-DRB mapping) | **TS 37.324** |
-| RRC messages | **TS 38.331** |
-| NGAP (gNB–AMF N2) | **TS 38.413** |
-| F1AP (CU–DU split) | **TS 38.473** |
-| E1AP (CU-CP – CU-UP split) | **TS 38.463** |
-| GTP-U (user plane tunnel) | **TS 29.281** |
-| NAS 5GS (UE–AMF N1) | **TS 24.501** |
-| 5G System architecture | **TS 23.501** |
-| AMF procedures | **TS 23.502** |
-| SMF / PDU sessions | **TS 23.502** §4.3 |
-| PFCP (SMF–UPF N4) | **TS 29.244** |
-| SBI (HTTP/2 REST, OpenAPI) | **TS 29.500**, **TS 29.501** |
-| Authentication (5G-AKA, EAP-AKA') | **TS 33.501** |
-| MILENAGE algorithm | **TS 35.206** |
-| Network slicing | **TS 23.501** §5.15 |
-| O-RAN E2 AP | **O-RAN.WG3.E2AP** |
-| E2SM-KPM | **O-RAN.WG3.E2SM-KPM** |
+| NR Physical layer (waveform, channels, procedures) | **[TS 38.211](https://www.3gpp.org/DynaReport/38211.htm)**, **[TS 38.212](https://www.3gpp.org/DynaReport/38212.htm)**, **[TS 38.213](https://www.3gpp.org/DynaReport/38213.htm)**, **[TS 38.214](https://www.3gpp.org/DynaReport/38214.htm)** |
+| MAC protocol | **[TS 38.321](https://www.3gpp.org/DynaReport/38321.htm)** |
+| RLC protocol | **[TS 38.322](https://www.3gpp.org/DynaReport/38322.htm)** |
+| PDCP protocol | **[TS 38.323](https://www.3gpp.org/DynaReport/38323.htm)** |
+| SDAP (QoS-to-DRB mapping) | **[TS 37.324](https://www.3gpp.org/DynaReport/37324.htm)** |
+| RRC messages | **[TS 38.331](https://www.3gpp.org/DynaReport/38331.htm)** |
+| NGAP (gNB–AMF N2) | **[TS 38.413](https://www.3gpp.org/DynaReport/38413.htm)** |
+| F1AP (CU–DU split) | **[TS 38.473](https://www.3gpp.org/DynaReport/38473.htm)** |
+| E1AP (CU-CP – CU-UP split) | **[TS 38.463](https://www.3gpp.org/DynaReport/38463.htm)** |
+| GTP-U (user plane tunnel) | **[TS 29.281](https://www.3gpp.org/DynaReport/29281.htm)** |
+| NAS 5GS (UE–AMF N1) | **[TS 24.501](https://www.3gpp.org/DynaReport/24501.htm)** |
+| 5G System architecture | **[TS 23.501](https://www.3gpp.org/DynaReport/23501.htm)** |
+| AMF procedures | **[TS 23.502](https://www.3gpp.org/DynaReport/23502.htm)** |
+| SMF / PDU sessions | **[TS 23.502](https://www.3gpp.org/DynaReport/23502.htm)** §4.3 |
+| PFCP (SMF–UPF N4) | **[TS 29.244](https://www.3gpp.org/DynaReport/29244.htm)** |
+| SBI (HTTP/2 REST, OpenAPI) | **[TS 29.500](https://www.3gpp.org/DynaReport/29500.htm)**, **[TS 29.501](https://www.3gpp.org/DynaReport/29501.htm)** |
+| Authentication (5G-AKA, EAP-AKA') | **[TS 33.501](https://www.3gpp.org/DynaReport/33501.htm)** |
+| MILENAGE algorithm | **[TS 35.206](https://www.3gpp.org/DynaReport/35206.htm)** |
+| Network slicing | **[TS 23.501](https://www.3gpp.org/DynaReport/23501.htm)** §5.15 |
+| O-RAN E2 AP | **[O-RAN.WG3.E2AP](https://www.o-ran.org/specifications)** |
+| E2SM-KPM | **[O-RAN.WG3.E2SM-KPM](https://www.o-ran.org/specifications)** |
 
 ### Reporting Issues and Getting Help
 
