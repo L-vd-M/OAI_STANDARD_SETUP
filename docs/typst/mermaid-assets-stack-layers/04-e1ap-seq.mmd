@@ -1,0 +1,10 @@
+sequenceDiagram
+    participant CUCP as gNB-CU-CP (RRC)
+    participant CUUP as gNB-CU-UP (PDCP/SDAP)
+
+    Note over CUCP: RRC decides a PDU session/DRB<br/>needs to be established
+    CUCP->>CUUP: Bearer Context Setup Request<br/>(PDCP config, QoS-flow-to-DRB map,<br/>N3/F1-U tunnel info)
+    CUUP->>CUCP: Bearer Context Setup Response<br/>(CU-UP's own tunnel endpoints)
+    Note over CUCP,CUUP: Later, on reconfiguration:
+    CUCP->>CUUP: Bearer Context Modification Request
+    CUUP->>CUCP: Bearer Context Modification Response

@@ -1,0 +1,13 @@
+sequenceDiagram
+    participant gNB
+    participant AMF
+
+    gNB->>AMF: Initial UE Message<br/>(NAS: Registration Request, opaque to RAN)
+    Note over AMF: Authentication, Security Mode<br/>(NAS, relayed transparently via gNB)
+    AMF->>gNB: Initial Context Setup Request<br/>(security keys, PDU session setup,<br/>NAS: Registration Accept)
+    gNB->>AMF: Initial Context Setup Response
+    Note over gNB,AMF: UE now RRC_CONNECTED / CM_CONNECTED
+
+    Note over AMF: Later: downlink data/signalling<br/>arrives for an idle UE
+    AMF->>gNB: Paging (TAIListForPaging)
+    Note over gNB: gNB pages UE over the air<br/>in every cell of the TA
