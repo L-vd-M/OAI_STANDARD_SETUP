@@ -1,0 +1,22 @@
+flowchart TB
+    subgraph gNB_CU["gNB-CU-CP"]
+        RRC["RRC<br/>openair2/RRC/NR<br/>rrc_gnb_task()"]
+    end
+    subgraph gNB_CUUP["gNB-CU-UP"]
+        SDAP_g["SDAP<br/>openair2/SDAP/nr_sdap"]
+        PDCP_g["PDCP<br/>openair2/LAYER2/nr_pdcp"]
+    end
+    subgraph gNB_DU["gNB-DU"]
+        RLC_g["RLC<br/>openair2/LAYER2/nr_rlc"]
+        MAC_g["MAC<br/>openair2/LAYER2/NR_MAC_gNB"]
+        PHY_g["PHY<br/>openair1/SCHED_NR"]
+    end
+    RRC <-->|E1AP| PDCP_g
+    RRC <-->|F1AP| MAC_g
+    SDAP_g <--> PDCP_g
+    PDCP_g <-->|F1-U, GTP-U tunnel| RLC_g
+    RLC_g <--> MAC_g
+    MAC_g <-->|nFAPI structs| PHY_g
+
+    style RRC fill:#8c5a2d,color:#fff
+    style MAC_g fill:#2d5a8c,color:#fff

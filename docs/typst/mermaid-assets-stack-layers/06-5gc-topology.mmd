@@ -1,0 +1,13 @@
+graph LR
+    RAN["RAN (gNB)"] -->|N2, NGAP| AMF
+    RAN -->|N3, GTP-U| UPF
+    AMF <-->|SBI, HTTP/2+JSON| SMF
+    AMF <-->|SBI| AUSF
+    AMF <-->|SBI| UDM
+    UDM <-->|SBI| UDR
+    SMF <-->|N4, PFCP| UPF
+    UPF -->|N6| DN["Data Network"]
+
+    style AMF fill:#8c2d2d,color:#fff
+    style SMF fill:#8c2d2d,color:#fff
+    style UPF fill:#8c2d2d,color:#fff

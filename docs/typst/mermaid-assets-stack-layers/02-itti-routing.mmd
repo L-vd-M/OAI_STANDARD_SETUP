@@ -1,0 +1,12 @@
+flowchart LR
+    F1["F1AP task<br/>TASK_CU_F1"] -->|itti_send_msg_to_task<br/>TASK_RRC_GNB| Q["TASK_RRC_GNB queue<br/>(FIFO)"]
+    E1["E1AP task<br/>TASK_CUCP_E1"] -->|itti_send_msg_to_task<br/>TASK_RRC_GNB| Q
+    NG["NGAP task<br/>TASK_NGAP"] -->|itti_send_msg_to_task<br/>TASK_RRC_GNB| Q
+    Q --> Loop["rrc_gnb_task() receive loop<br/>(rrc_gNB.c:3338)"]
+    Loop --> Switch{"switch on message type"}
+    Switch -->|"F1AP_*"| HF["F1AP handlers"]
+    Switch -->|"E1AP_*"| HE["E1AP handlers"]
+    Switch -->|"NGAP_*"| HN["NGAP handlers"]
+
+    style Q fill:#8c5a2d,color:#fff
+    style Switch fill:#2d5a8c,color:#fff

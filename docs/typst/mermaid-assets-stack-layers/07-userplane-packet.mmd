@@ -1,0 +1,18 @@
+sequenceDiagram
+    participant DN as Data Network (N6)
+    participant UPF
+    participant CUUP as gNB CU-UP (SDAP/PDCP)
+    participant DU as gNB DU (RLC/MAC/PHY)
+    participant UE
+
+    DN->>UPF: IP packet
+    Note over UPF: PFCP session rules (from SMF)<br/>select GTP-U tunnel (N3)
+    UPF->>CUUP: GTP-U (N3) — tunnel-mapped to a PDU session
+    Note over CUUP: sdap_data_ind() maps QFI to DRB<br/>(nr_sdap_entity.c)
+    Note over CUUP: nr_pdcp_data_req_drb()<br/>ciphers + adds PDCP header
+    CUUP->>DU: GTP-U (F1-U) carrying PDCP PDU
+    Note over DU: nr_rlc_data_req() segments/concatenates<br/>into RLC PDU
+    Note over DU: nr_mac_rlc_data_req() pulls SDU,<br/>gNB_dlsch_ulsch_scheduler() allocates PRBs
+    Note over DU: phy_procedures_gNB_TX() modulates,<br/>transmits over the air
+    DU->>UE: NR air interface (Uu)
+    Note over UE: PHY → nr_ue_dl_indication() → MAC →<br/>nr_mac_rlc_data_ind() → RLC deliver_sdu() →<br/>nr_pdcp_data_ind() → sdap_data_ind() → application

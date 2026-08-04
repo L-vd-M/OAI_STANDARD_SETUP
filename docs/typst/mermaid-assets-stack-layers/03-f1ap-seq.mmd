@@ -1,0 +1,12 @@
+sequenceDiagram
+    participant DU as gNB-DU
+    participant CU as gNB-CU-CP
+
+    DU->>CU: F1 Setup Request
+    CU->>DU: F1 Setup Response
+    Note over DU,CU: DU now known to CU, cells registered
+
+    DU->>CU: Initial UL RRC Message Transfer<br/>(RRCSetupRequest, opaque to DU)
+    CU->>DU: DL RRC Message Transfer<br/>(RRCSetup)
+    DU->>CU: UL RRC Message Transfer<br/>(RRCSetupComplete)
+    Note over DU,CU: Subsequent RRC messages use plain<br/>UL/DL RRC Message Transfer
